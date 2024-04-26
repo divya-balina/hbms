@@ -1,0 +1,36 @@
+{% extends 'navbar/customernavbar.html' %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% block body %}
+<div class="container mt-5">
+    <h2>Room Details List</h2>
+
+    <div class="row">
+        {% for job_details in job_details_list %}
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ job_details.work_title }}</h5>
+                        <p class="card-text">
+                            <strong>no_of_rooms:</strong> {{ room_details.no_of_rooms }}<br>
+                            <strong>type_of_room:</strong> {{ room_details.type_of_room }}<br>
+                            <strong>no_of_people:</strong> {{ room_details.no_of_people }}<br>
+                        </p>
+
+                        <!-- Apply button -->
+                        <a href="#" class="btn btn-success">Book this room</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}
+</body>
+</html>

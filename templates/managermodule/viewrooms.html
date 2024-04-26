@@ -1,0 +1,73 @@
+{% extends 'navbar/managernavbar.html' %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="{% static 'css/swiper-bundle.min.css' %}" />
+    <style>
+        /* Additional CSS styles can go here if needed */
+    </style>
+</head>
+<body>
+{% block body %}
+<div>
+    <h1>This page is to see all available rooms in the hotel</h1>
+    <div class="container swiper">
+        <div class="slide-container">
+            <div class="card-wrapper swiper-wrapper">
+                <div class="card swiper-slide">
+                    <img src="{% static 'images/room1.jpeg' %}" alt="Picture 1">
+                    <div class="card-content">
+                        <h2>Single Bed</h2>
+                        <p>A room assigned to one person. May have one or more beds. The room size or area of Single Rooms is generally between 37 m² to 45 m²</p>
+                    </div>
+                </div>
+                <div class="card swiper-slide">
+                    <img src="https://www.europahotelbelfast.com/wp-content/uploads/2021/10/DSC_7769-Edit-1-1366x768-fp_mm-fpoff_0_0.png" alt="Picture 2">
+                    <div class="card-content">
+                        <h2>Double Bed</h2>
+                        <p>A room assigned to two people. May have one or more beds. The room size or area of Double Rooms is generally between 40 m² to 45 m²</p>
+                    </div>
+                </div>
+                <div class="card swiper-slide">
+                    <img src="{% static 'images/room3.jpg' %}" alt="Picture 3">
+                    <div class="card-content">
+                        <h2>Picture 3</h2>
+                        <p>Description of picture 3.</p>
+                    </div>
+                </div>
+                <div class="card swiper-slide">
+                    <img src="https://www.southcourthotel.com/wp-content/uploads/2021/12/SC-Interior-HIGH-Resolution-6-1366x768-fp_mm-fpoff_0_0.jpg" alt="Picture 1">
+                    <div class="card-content">
+                        <h2>Picture 4</h2>
+                        <p>Description of picture 4.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-button-next swiper-navBtn"></div>
+        <div class="swiper-button-prev swiper-navBtn"></div>
+        <div class="swiper-pagination"></div>
+    </div>
+</div>
+
+<script src="{% static 'js/swiper-bundle.min.js' %}"></script>
+<script>
+    var swiper = new Swiper('.swiper', {
+        slidesPerView: 'auto',
+        spaceBetween: 20,
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+    });
+</script>
+{% endblock %}
+</body>
+</html>
